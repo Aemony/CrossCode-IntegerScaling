@@ -26,7 +26,7 @@ $_checkSystemSettingsReplacement 	= 'else if(b=="pixel-size"){window.IG_GAME_SCA
 
 # _setDisplaySize - Adds new case for handling integer base scaling.
 $_setDisplaySizeSource 				= 'case sc.DISPLAY_TYPE.STRETCH:o=true;a=b;b=e;f=true;break;default:a=c;b=d'
-$_setDisplaySizeReplacement 		= 'case sc.DISPLAY_TYPE.STRETCH:o=true;a=b;b=e;f=true;break;case sc.DISPLAY_TYPE.INTEGER:if(b>c*window.IG_GAME_SCALE&&e>d*window.IG_GAME_SCALE){a=c*window.IG_GAME_SCALE;b=d*window.IG_GAME_SCALE}else if(Math.floor(b/c)==0||Math.floor(e/d)==0){a=c;b=d}else{if(b/c<e/d){a=c*Math.floor(b/c);b=d*Math.floor(b/c)}else{a=c*Math.floor(e/d);b=d*Math.floor(e/d)}}break;default:a=c;b=d'
+$_setDisplaySizeReplacement 		= 'case sc.DISPLAY_TYPE.STRETCH:o=true;a=b;b=e;f=true;break;case sc.DISPLAY_TYPE.INTEGER:f=true;if(b>c*window.IG_GAME_SCALE&&e>d*window.IG_GAME_SCALE){a=c*window.IG_GAME_SCALE;b=d*window.IG_GAME_SCALE}else if(Math.floor(b/c)==0||Math.floor(e/d)==0){a=c;b=d}else{if(b/c<e/d){a=c*Math.floor(b/c);b=d*Math.floor(b/c)}else{a=c*Math.floor(e/d);b=d*Math.floor(e/d)}}break;default:a=c;b=d'
 
 
 
