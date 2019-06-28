@@ -1,5 +1,7 @@
 # CrossCode-IntegerScaling
-Patch to apply integer scaling to CrossCode on Steam. Confirmed working with build ID 3830405, manifest 3613959795902897611 of depot 368341 (dated May 16, 2019 – 18:02:18 UTC).
+Patch to add integer-based scaling method to CrossCode through a new custom display type called **Integer**, along with two new pixels sizes (5x and 6x; 6x is the optimal for 4K gameplay).
+
+Confirmed working with build ID 3830405 on Steam, manifest 3613959795902897611 of depot 368341 (dated May 16, 2019 – 18:02:18 UTC). May or may not work with copies on other platforms.
 
 
 ## Instructions
