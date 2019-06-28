@@ -3,9 +3,7 @@ Patch to apply integer scaling to CrossCode on Steam. Confirmed working with bui
 
 ## Caution
 
-Due to the new settings being available, the mod causes saves that make use of those settings to be dependent on the mod. It is recommended and necessary to save the game using unmodded values on both **Display Type** and **Pixel Size** before removing the mod.
-
-Basically **use at your own risk!**
+The video settings menu can be made inaccessible after the mod have been removed if the save file still refer to the custom video options. Open the general settings menu and click the B key or **Reset all settings** to restore the original video settings to be able to access the video settings menu again.
 
 ## Instructions
 
