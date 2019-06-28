@@ -3,7 +3,7 @@ Patch to apply integer scaling to CrossCode on Steam. Confirmed working with bui
 
 ## Instructions
 
-1. Download the Powershell script file and place it in the game folder.
+1. Download the **Apply-IntegerScalingTweaks.ps1** PowerShell script file and place it in the game folder.
 
 2. Right click it and select **Run with Powershell**.
 
