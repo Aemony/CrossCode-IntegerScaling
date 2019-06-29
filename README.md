@@ -64,7 +64,7 @@ The patch changes the following code sections:
         };
 ```
 
-* _checkSystemSettings - Added a call to _setDisplaySize() (needed to properly apply the integer ratio on launch).
+* _checkSystemSettings - Added a call to _setDisplaySize() (needed to properly apply the integer ratio on launch and when changing pixel size).
 ```
         } else if (b == "pixel-size") {
         	window.IG_GAME_SCALE = (this.values[b] || 0) + 1;
