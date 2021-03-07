@@ -3,7 +3,7 @@ Patch to add integer-based scaling method to CrossCode through a new custom disp
 
 Why integer scaling? To prevent blur and/or shimmering that can otherwise result as a consequence as pixels are interpolated and doesn't fit evenly. See http://tanalin.com/en/articles/lossless-scaling/ for a better explanation. The idea came as a result of [this thread](https://steamcommunity.com/app/368340/discussions/0/1640915206443018918/) on the Steam Community forums, and previous requests made to add integer scaling to the game.
 
-*Confirmed working with build ID 3830405 on Steam, manifest 3613959795902897611 of depot 368341 (dated May 16, 2019 – 18:02:18 UTC). May or may not work with copies on other platforms.*
+*Confirmed working with build ID 6337146 on Steam, manifest 2547596954615951835 of depot 368349 (dated March 5, 2021 – 18:13:28 UTC). May or may not work with copies on other platforms.*
 
 
 ## Instructions
@@ -66,8 +66,8 @@ The patch changes the following code sections:
 
 * _checkSystemSettings - Added a call to _setDisplaySize() (needed to properly apply the integer ratio on launch and when changing pixel size).
 ```
-        } else if (b == "pixel-size") {
-        	window.IG_GAME_SCALE = (this.values[b] || 0) + 1;
+        } else if (a == "pixel-size") {
+        	window.IG_GAME_SCALE = (this.values[a] || 0) + 1;
         	localStorage.setItem("options.scale", window.IG_GAME_SCALE);
         	this._setDisplaySize();
         }
@@ -76,19 +76,19 @@ The patch changes the following code sections:
 * _setDisplaySize - Added a new case for the switch statement for handling integer scaling:
 ```
 case sc.DISPLAY_TYPE.INTEGER:
-	if (b > c * window.IG_GAME_SCALE && e > d * window.IG_GAME_SCALE) {
+	if (b > c * window.IG_GAME_SCALE && i > d * window.IG_GAME_SCALE) {
 		a = c * window.IG_GAME_SCALE;
 		b = d * window.IG_GAME_SCALE;
 	} else if (Math.floor(b / c) == 0 || Math.floor(e / d) == 0) {
 		a = c;
 		b = d;
 	} else {
-		if (b / c < e / d) {
+		if (b / c < i / d) {
 			a = c * Math.floor(b / c);
 			b = d * Math.floor(b / c);
 		} else {
-			a = c * Math.floor(e / d);
-			b = d * Math.floor(e / d);
+			a = c * Math.floor(i / d);
+			b = d * Math.floor(i / d);
 		}
 	}
 	break;
