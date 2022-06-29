@@ -3,7 +3,7 @@ Patch to add integer-based scaling method to CrossCode through a new custom disp
 
 Why integer scaling? To prevent blur and/or shimmering that can otherwise result as a consequence as pixels are interpolated and doesn't fit evenly. See http://tanalin.com/en/articles/lossless-scaling/ for a better explanation. The idea came as a result of [this thread](https://steamcommunity.com/app/368340/discussions/0/1640915206443018918/) on the Steam Community forums, and previous requests made to add integer scaling to the game.
 
-*Confirmed working with build ID 3830405 on Steam, manifest 3613959795902897611 of depot 368341 (dated May 16, 2019 – 18:02:18 UTC). May or may not work with copies on other platforms.*
+*Confirmed working with build ID 8583893 on Steam, manifest 2192574251112456041 of depot 368341 (dated 19 April 2022 – 17:09:49 UTC). May or may not work with copies on other platforms.*
 
 
 ## Instructions
