@@ -14,6 +14,8 @@ Why integer scaling? To prevent blur and/or shimmering that can otherwise result
 
 3. Launch the game and reconfigure it to use the new **Integer** display type as well as a fitting pixel size. It is recommended to restart the game to allow the change in pixel size to properly take effect.
 
+   * If you are on a 4K display and there is no difference between 4, 5, and 6 in pixel size you need to add the `/force-device-scale-factor=1` command-line argument (aka "launch options" for Steam) to prevent the game from applying DPI scaling to the game window.
+
 4. To remove the mod, download and run the **Uninstall-IntegerScaling.ps1** script file from the game folder.
 
 5. The video settings menu can be made inaccessible after the mod have been removed if the save file still refer to the custom video options. Open the general settings menu and click the B key or **Reset all settings** to restore the original video settings to be able to access the video settings menu again.
@@ -66,8 +68,8 @@ The patch changes the following code sections:
 
 * _checkSystemSettings - Added a call to _setDisplaySize() (needed to properly apply the integer ratio on launch and when changing pixel size).
 ```
-        } else if (b == "pixel-size") {
-        	window.IG_GAME_SCALE = (this.values[b] || 0) + 1;
+        } else if (a == "pixel-size") {
+        	window.IG_GAME_SCALE = (this.values[a] || 0) + 1;
         	localStorage.setItem("options.scale", window.IG_GAME_SCALE);
         	this._setDisplaySize();
         }
@@ -76,19 +78,20 @@ The patch changes the following code sections:
 * _setDisplaySize - Added a new case for the switch statement for handling integer scaling:
 ```
 case sc.DISPLAY_TYPE.INTEGER:
-	if (b > c * window.IG_GAME_SCALE && e > d * window.IG_GAME_SCALE) {
+	j = true;
+	if (b > c * window.IG_GAME_SCALE && i > d * window.IG_GAME_SCALE) {
 		a = c * window.IG_GAME_SCALE;
-		b = d * window.IG_GAME_SCALE;
-	} else if (Math.floor(b / c) == 0 || Math.floor(e / d) == 0) {
+		b = d * window.IG_GAME_SCALE
+	} else if (Math.floor(b / c) == 0 || Math.floor(i / d) == 0) {
 		a = c;
-		b = d;
+		b = d
 	} else {
-		if (b / c < e / d) {
+		if (b / c < i / d) {
 			a = c * Math.floor(b / c);
-			b = d * Math.floor(b / c);
+			b = d * Math.floor(b / c)
 		} else {
-			a = c * Math.floor(e / d);
-			b = d * Math.floor(e / d);
+		a = c * Math.floor(i / d);
+		b = d * Math.floor(i / d)
 		}
 	}
 	break;
