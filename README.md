@@ -8,15 +8,15 @@ Why integer scaling? To prevent blur and/or shimmering that can otherwise result
 
 ## Instructions
 
-1. Download the **Install-IntegerScaling.ps1** script file and place it in the game folder.
+1. Download the [latest release](https://github.com/Aemony/CrossCode-IntegerScaling/releases/latest) and extract the archive to the game folder.
 
-2. Right click it and select **Run with PowerShell**.
+2. Double click on the **Install-IntegerScaling.bat** file to execute the included PowerShell script file.
 
 3. Launch the game and reconfigure it to use the new **Integer** display type as well as a fitting pixel size. It is recommended to restart the game to allow the change in pixel size to properly take effect.
 
    * If you are on a 4K display and there is no difference between 4, 5, and 6 in pixel size you need to add the `/force-device-scale-factor=1` command-line argument (aka "launch options" for Steam) to prevent the game from applying DPI scaling to the game window.
 
-4. To remove the mod, download and run the **Uninstall-IntegerScaling.ps1** script file from the game folder.
+4. To remove the mod, double click on the **Uinstall-IntegerScaling.bat** file in the game folder.
 
 5. The video settings menu can be made inaccessible after the mod have been removed if the save file still refer to the custom video options. Open the general settings menu and click the B key or **Reset all settings** to restore the original video settings to be able to access the video settings menu again.
 
